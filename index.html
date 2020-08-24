@@ -4,8 +4,8 @@
 <head>
     <title>Selouse</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
@@ -32,14 +32,28 @@
     </div>
 
     <hr>
-
     <div id="results"></div>
+    <script id="apar-template" type="text/x-handlebars-template">
+        {{#if apartments}}
+        {{#each apartments}}
+            <div class="result"><img src="{{img}}"> 
+                <p class="l-addr">Address: {{address}} </p>
+                <div class="l-price">Price: {{price}}</div>
+                <div class="l-rooms">Rooms: {{rooms}}</div>
+                <div class="l-park fas fa-parking"></div>
+                <div class="parking">{{#if parking}}<i class="far fa-check-circle"></i>{{else}}<i class="fas fa-times"></i>{{/if}}</div></div>
+                <div class="l-immediate">{{#if immediate}}{{#each contactDetails}}{{this}}{{/each}}{{/if}} </div>
+            </div>
+        {{/each}}
+        {{else}} <div class="no-match">There is no results</div>
+        {{/if}}
+        
+        
+        
+    </script>
 
-    <!-- Your Code Here -->
-    <!-- You should start doing handlebar stuff here -->
-    <!-- Your Code Here -->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="apt-data.js"></script>
     <script src="apt-filter.js"></script>
@@ -47,3 +61,6 @@
 </body>
 
 </html>
+
+
+

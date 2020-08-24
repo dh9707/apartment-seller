@@ -116,6 +116,7 @@ button:active{background-color: #443729;}
 
 .result>.l-addr{
     grid-area: la;
+    width: max-content;
 }
 
 .result>.l-price{
@@ -130,7 +131,9 @@ button:active{background-color: #443729;}
     grid-area: lpark;
 }
 
-.result>.l-immediate{}
+.result>.l-immediate{
+
+}
 
 .result>.address{
     grid-area: a;

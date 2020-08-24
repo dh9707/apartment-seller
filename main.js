@@ -11,10 +11,16 @@ $("button").on("click", function () {
     renderApts(relevantApts)
 })
 
+
+
 const renderApts = function (apartments) {
     $("#results").empty()
-    console.log(apartments) //array of apartments to render
-    //Your code goes here.
+    const source = $('#apar-template').html();
+    const template = Handlebars.compile(source);
+    const newHTML = template({apartments});
+    $('#results').append(newHTML);
+
 }
 
 renderApts(apartments) //renders apartments when page loads
+
